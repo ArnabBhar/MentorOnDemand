@@ -11,6 +11,7 @@ import { SignupComponent } from './signup/signup.component';
 import {FormsModule} from '@angular/forms';
 import { TraineeComponent } from './trainee/trainee.component';
 import { MentorComponent } from './mentor/mentor.component';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { MentorComponent } from './mentor/mentor.component';
     LoginComponent,
     SignupComponent,
     TraineeComponent,
-    MentorComponent
+    MentorComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

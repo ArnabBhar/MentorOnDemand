@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>User</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="WebUni Education Template">
+    <meta name="keywords" content="webuni, education, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="shortcut icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="site-logo">
+                        <a href=#><img src="img/logo.png" alt=""></a>
+                    </div>
+                    <a href=#><strong id="logoName">Mentor On Demand</strong></a>
+                    <div class="nav-switch">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <a href="login.html" class="site-btn header-btn">Log Out</a>
+                    <nav class="main-menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Courses</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+
+    <!-- Hero section -->
+    <section class="hero-section set-bg" data-setbg="img/bg.jpg">
+        <div class="container">
+            <div class="hero-text">
+                <div id="search-body">
+                    <div class="row justify-content-center">
+                        <ul class="nav nav-pills nav-fill" id="user-menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="user.html"> Search </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="user_ongoing.html"> Training in Progress</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="user_completed.html">Completed Training</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col card mt-2">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/Java.jpg" width="150px" height="150px" class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-left pt-3">
+                                        <strong>Course  : </strong> Java<br>
+                                        <strong>Trainer : </strong> Debashis Chakraborty<br>
+                                        <strong>Status  : </strong> Waiting for Confirmation<br />
+                                        <br /><button class="btn btn-secondary disabled">Make payment</button>
+                                        <button type="button" class="btn btn-danger">Cancel Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col card mt-2">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/MySql.png" width="150px" height="150px" class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-left pt-3">
+                                        <strong>Course  : </strong> MySQL<br>
+                                        <strong>Trainer : </strong> Samrat Sarkar<br>
+                                        <strong>Status  : </strong>Training in Progress<br>
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%">63%</div>
+                                        </div><br>
+                                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Update Training Status</button><br><br>
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Update Progress</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style="width: 100%">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-px-2">
+                                        <button type="button" class="btn btn-success">Resume Course</button>
+                                        <button type="button" class="btn btn-info">Rate trainer</button>
+                                        <button type="button" class="btn btn-danger">Cancel Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col card mt-2">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/Spring.png" width="150px" height="150px" class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-left pt-3">
+                                        <strong>Course  : </strong> Spring<br>
+                                        <strong>Trainer : </strong> Mousumi Dutt<br>
+                                        <strong>Status  : </strong> Training Confirmed<br /> Payment Successful.<br><br>
+                                        <button type="button" class="btn btn-success">Start Course</button>
+                                        <button type="button" class="btn btn-danger">Cancel Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col card mt-2">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <img src="img/Angular.png" width="150px" height="150px" class="rounded float-left" alt="">
+                                    </div>
+                                    <div class="col text-left pt-3">
+                                        <strong>Course  : </strong> Angular<br>
+                                        <strong>Trainer : </strong> Karthik<br>
+                                        <strong>Status  : </strong> Training Confirmed.<br /> Payment Pending.<br><br>
+                                        <button type="button" class="btn btn-success">Make payment</button>
+                                        <button type="button" class="btn btn-danger">Cancel Course</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero section end -->
+
+
+
+    <!-- footer section -->
+    <footer>
+        <div class="footer-bottom">
+            <div class="footer-warp">
+                <div class="copyright">
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> All rights reserved
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer section end -->
+
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/circle-progress.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</body>
+
+</html>
