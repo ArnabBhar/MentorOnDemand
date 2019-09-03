@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-trainee',
@@ -8,13 +9,17 @@ import { LoginService } from '../login.service';
 })
 export class TraineeComponent implements OnInit {
 
+  mentorData;
   searchFlag: boolean = false;
   userFlag: boolean = false;
   userCompleteFlag: boolean = false;
 
-  constructor(private logIn: LoginService) { }
+  constructor(private logIn: LoginService, private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('/assets/mentor.json').subscribe(mentordata => {
+      this.mentorData = mentordata;
+    })
   }
 
   selectTab(n) {

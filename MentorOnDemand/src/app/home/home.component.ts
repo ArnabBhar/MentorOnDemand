@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,19 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  courseName:string;
-  flag:boolean=false;
-  constructor() { }
+  mentorData;
+  courseName: string;
+  flag: boolean = false;
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('/assets/mentor.json').subscribe(mentordata => {
+      this.mentorData = mentordata;
+    })
   }
 
-  searchCourse()
-  {
-    if(this.courseName==='Spring'){
-      this.flag=true;
+  searchCourse() {
+    if (this.courseName === 'Spring') {
+      this.flag = true;
       return;
     }
-    this.flag=false;
+    this.flag = false;
   }
 }

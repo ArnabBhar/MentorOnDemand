@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { LoginService } from '../login.service';
+import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,9 +12,17 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginDetails = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    accountType: new FormControl('', Validators.required),
+  });
+
+  userData;
   selectedUser: string;
   constructor(public router: Router,
-    private logIn: LoginService) { }
+    private logIn: LoginService,
+    private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -23,21 +33,46 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.selectedUser === 'Trainee') {
-      this.logIn.loginName = 'loggedIn';
-      this.router.navigate(['/trainee']);
-      return;
+      this.http.get('/assets/users.json').subscribe(userdata => {
+        this.userData = userdata;
+        for (let i = 0; i < 1; i++) {
+          if (this.userData[i].username == this.loginDetails.get('username').value && this.userData[i].password == this.loginDetails.get('password').value) {
+            this.logIn.loginName = 'loggedIn';
+            this.router.navigate(['/trainee']);
+            return true;
+          }
+        }
+        alert("wrong credentials");
+      });
     }
 
     if (this.selectedUser === 'Trainer') {
-      this.logIn.loginName = 'loggedIn';
-      this.router.navigate(['/mentor']);
-      return;
+      this.http.get('/assets/mentor.json').subscribe(userdata => {
+        this.userData = userdata;
+        for (let i = 0; i < 1; i++) {
+          if (this.userData[i].username == this.loginDetails.get('username').value && this.userData[i].password == this.loginDetails.get('password').value) {
+
+            this.logIn.loginName = 'loggedIn';
+            this.router.navigate(['/mentor']);
+            return true;
+          }
+        }
+        alert("wrong credentials");
+      });
     }
 
     if (this.selectedUser === 'Admin') {
-      this.logIn.loginName = 'loggedIn';
-      this.router.navigate(['/admin']);
-      return;
+      this.http.get('/assets/admin.json').subscribe(userdata => {
+        this.userData = userdata;
+        for (let i = 0; i < 1; i++) {
+          if (this.userData[i].username == this.loginDetails.get('username').value && this.userData[i].password == this.loginDetails.get('password').value) {
+            this.logIn.loginName = 'loggedIn';
+            this.router.navigate(['/admin']);
+            return true;
+          }
+        }
+        alert("wrong credentials");
+      });
     }
   }
 
