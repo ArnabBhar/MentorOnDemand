@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class TraineeComponent implements OnInit {
 
   mentorData;
+  userData;
   searchFlag: boolean = false;
   userFlag: boolean = false;
   userCompleteFlag: boolean = false;
@@ -19,7 +20,10 @@ export class TraineeComponent implements OnInit {
   ngOnInit() {
     this.http.get('/assets/mentor.json').subscribe(mentordata => {
       this.mentorData = mentordata;
-    })
+    });
+    this.http.get('/assets/user_completed.json').subscribe(userdata => {
+      this.userData = userdata;
+    });
   }
 
   selectTab(n) {

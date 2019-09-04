@@ -3,7 +3,8 @@
     <div class="container">
         <div class="hero-text">
             <ul class="nav nav-tabs justify-content-center">
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#trainee-reg">Trainee Registration</a>
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#trainee-reg">Trainee
+                        Registration</a>
                 </li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#trainer-reg">Trainer Trainings</a>
                 </li>
@@ -15,63 +16,73 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-body">
-                                    <form name="my-form" onsubmit="return validform()" action="" method="">
+                                    <form name="formTrainee" action="" method="">
                                         <div class="form-group row">
-                                            <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                            <label for="full_name" class="col-md-4 col-form-label text-md-right">Full
+                                                Name</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="full_name" class="form-control" name="full-name">
+                                                <input type="text" id="full_name" class="form-control" name="full_name">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                            <label for="email_address"
+                                                class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                             <div class="col-md-6">
-                                                <input type="email" id="email_address" class="form-control" name="email-address">
+                                                <input type="email" id="email_address" class="form-control"
+                                                    name="email">
                                             </div>
                                         </div>
 
 
 
                                         <div class="form-group row">
-                                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                            <label for="phone_number"
+                                                class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="phone_number" class="form-control">
+                                                <input type="text" id="phoneNumber" class="form-control">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
+                                            <label for="present_address"
+                                                class="col-md-4 col-form-label text-md-right">Present Address</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="present_address" class="form-control">
+                                                <input type="text" id="present_address" class="form-control"
+                                                    name="present_address">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
+                                            <label for="permanent_address"
+                                                class="col-md-4 col-form-label text-md-right">Permanent Address</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="permanent_address" class="form-control" name="permanent-address">
+                                                <input type="text" id="permanent_address" class="form-control"
+                                                    name="permanent_address">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
-                                                title="National Id Card">NID</abbr> Number</label>
+                                                    title="National Id Card">NID</abbr> Number</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="nid_number" class="form-control" name="nid-number">
+                                                <input type="text" id="nid_number" class="form-control"
+                                                    name="nid_number">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                            <label for="password"
+                                                class="col-md-4 col-form-label text-md-right">Password</label>
                                             <div class="col-md-6">
-                                                <input type="password" class="form-control" name="password" id="password">
+                                                <input type="password" class="form-control" name="password"
+                                                    id="password">
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
-                                        Register
-                                        </button>
+                                            <input value="Register" type="submit" class="btn btn-primary"
+                                                (click)="validFormTrainee()" />
                                         </div>
                                     </form>
                                 </div>
@@ -85,33 +96,39 @@
                         <div class="col-md-8">
                             <div class="card">
                                 <div class="card-body">
-                                    <form name="my-form" onsubmit="return validform()" action="" method="">
+                                    <form name="formTrainer" (submit)="validFormTrainer()" action="" method="">
                                         <div class="form-group row">
-                                            <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                            <label for="full_name" class="col-md-4 col-form-label text-md-right">Full
+                                                Name</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="full_name" class="form-control" name="full-name">
+                                                <input type="text" id="full_name" class="form-control" name="full_name">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                            <label for="email_address"
+                                                class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                             <div class="col-md-6">
-                                                <input type="email" id="email_address" class="form-control" name="email-address">
+                                                <input type="email" id="email_address" class="form-control"
+                                                    name="email">
                                             </div>
                                         </div>
 
 
 
                                         <div class="form-group row">
-                                            <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                            <label for="phone_number"
+                                                class="col-md-4 col-form-label text-md-right">Phone Number</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="phone_number" class="form-control">
+                                                <input type="text" id="phone_number" class="form-control"
+                                                    name="phone_number">
                                             </div>
                                         </div>
 
 
                                         <div class="form-group row">
-                                            <label for="year_exp" class="col-md-4 col-form-label text-md-right">Years Of Experience</label>
+                                            <label for="year_exp" class="col-md-4 col-form-label text-md-right">Years Of
+                                                Experience</label>
                                             <div class="col-md-6">
                                                 <input type="text" id="year_exp" class="form-control" name="year_exp">
                                             </div>
@@ -119,31 +136,38 @@
 
 
                                         <div class="form-group row">
-                                            <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
+                                            <label for="present_address"
+                                                class="col-md-4 col-form-label text-md-right">Present Address</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="present_address" class="form-control">
+                                                <input type="text" id="present_address" class="form-control"
+                                                    name="present_address">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Permanent Address</label>
+                                            <label for="permanent_address"
+                                                class="col-md-4 col-form-label text-md-right">Permanent Address</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="permanent_address" class="form-control" name="permanent-address">
+                                                <input type="text" id="permanent_address" class="form-control"
+                                                    name="permanent_address">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <label for="nid_number" class="col-md-4 col-form-label text-md-right"><abbr
-                                                                    title="National Id Card">NID</abbr> Number</label>
+                                                    title="National Id Card">NID</abbr> Number</label>
                                             <div class="col-md-6">
-                                                <input type="text" id="nid_number" class="form-control" name="nid-number">
+                                                <input type="text" id="nid_number" class="form-control"
+                                                    name="nid_number">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                            <label for="password"
+                                                class="col-md-4 col-form-label text-md-right">Password</label>
                                             <div class="col-md-6">
-                                                <input type="password" class="form-control" name="password" id="password">
+                                                <input type="password" class="form-control" name="password"
+                                                    id="password">
                                             </div>
                                         </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-mentor',
@@ -13,12 +14,20 @@ export class MentorComponent implements OnInit {
   flag3: boolean = false;
   flag4: boolean = false;
   flag5: boolean = false;
+  mentorData;
+  payData;
 
   listOfCourse: any[] = ['HTML', 'CSS', 'BootStrap', 'Javascript', 'Angular', 'C++', 'Java', 'Spring', 'MySQL'];
   userCourse: any[] = ['HTML', 'CSS', 'Java', 'MySQL'];
-  constructor(private logIn: LoginService) { }
+  constructor(private logIn: LoginService, private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('/assets/mentor_completed.json').subscribe(mentordata => {
+      this.mentorData = mentordata;
+    });
+    this.http.get('/assets/withdraw.json').subscribe(paymentdata => {
+      this.payData = paymentdata;
+    });
   }
 
   selectMentor(n) {

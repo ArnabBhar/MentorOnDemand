@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-admin',
@@ -8,14 +9,34 @@ import { LoginService } from '../login.service';
 })
 export class AdminComponent implements OnInit {
 
+  traineeData;
+  courseData;
+  paymentData;
+  userData;
+  mentorData;
   flag1: boolean = false;
   flag2: boolean = false;
   flag3: boolean = false;
   flag4: boolean = false;
 
-  constructor(private logIn: LoginService) { }
+  constructor(private logIn: LoginService, private http: HttpClient) { }
 
   ngOnInit() {
+    this.http.get('/assets/training.json').subscribe(traineedata => {
+      this.traineeData = traineedata;
+    });
+    this.http.get('/assets/course.json').subscribe(coursedata => {
+      this.courseData = coursedata;
+    });
+    this.http.get('/assets/payment.json').subscribe(paymentdata => {
+      this.paymentData = paymentdata;
+    });
+    this.http.get('/assets/users.json').subscribe(userdata => {
+      this.userData = userdata;
+    });
+    this.http.get('/assets/mentor.json').subscribe(mentordata => {
+      this.mentorData = mentordata;
+    });
   }
 
   clearFlag() {
@@ -41,5 +62,19 @@ export class AdminComponent implements OnInit {
     else {
       //no nothing
     }
+  }
+  block(i, type) {
+    if (type == 'user') {
+      this.userData[i].status = "blocked";
+    } else
+      this.mentorData[i].status = "blocked";
+
+  }
+  unblock(i, type) {
+    if (type == 'user') {
+      this.userData[i].status = "unblocked";
+    } else
+      this.mentorData[i].status = "unblocked";
+
   }
 }

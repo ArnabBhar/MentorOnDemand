@@ -35,12 +35,12 @@
                             <div class="col-sm-auto"><strong class="text-white">Select a Technology : </strong></div>
                             <div class="col-sm-3">
                                 <select class="form-control" name="trainingTechnology">
-                            <option>-- Select technology --</option>
-                            <option value = "spring">Spring</option>
-                            <option>Java</option>
-                            <option>MySQL</option>
-                            <option>Angular</option>
-                        </select>
+                                    <option>-- Select technology --</option>
+                                    <option value="spring">Spring</option>
+                                    <option>Java</option>
+                                    <option>MySQL</option>
+                                    <option>Angular</option>
+                                </select>
                             </div>
                             <div class="col-sm-3">
                                 <div class="input-group md-form form-sm form-2 pl-0">
@@ -61,11 +61,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col text-left pt-3">
-                                        <strong>Course  : </strong> Spring<br>
+                                        <strong>Course : </strong> Spring<br>
                                         <strong>Trainee : </strong> Pritam Banerjee<br>
-                                        <strong>Status  : </strong> Training ongoing<br />
+                                        <strong>Status : </strong> Training ongoing<br />
                                         <div class="progress">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%">63%</div>
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                                                role="progressbar" aria-valuenow="63" aria-valuemin="0"
+                                                aria-valuemax="100" style="width: 63%">63%</div>
                                         </div><br>
                                         <button type="button" class="btn btn-primary">Resume Course</button>
                                     </div>
@@ -77,9 +79,9 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col text-left pt-3">
-                                        <strong>Course  : </strong> Spring<br>
+                                        <strong>Course : </strong> Spring<br>
                                         <strong>Trainee : </strong> Tamasa Koner<br>
-                                        <strong>Status  : </strong>Requested for Training<br>Payment Pending.<br><br>
+                                        <strong>Status : </strong>Requested for Training<br>Payment Pending.<br><br>
                                         <button type="button" class="btn btn-success">Approve</button>
                                         <button type="button" class="btn btn-danger">Reject</button>
                                     </div>
@@ -91,9 +93,9 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col text-left pt-3">
-                                        <strong>Course  : </strong> Angular<br>
+                                        <strong>Course : </strong> Angular<br>
                                         <strong>Trainee : </strong> Anirban Mukherjee<br>
-                                        <strong>Status  : </strong> Training Confirmed<br> Payment Successful.<br><br>
+                                        <strong>Status : </strong> Training Confirmed<br> Payment Successful.<br><br>
                                         <button type="button" class="btn btn-success">Start Course</button>
                                     </div>
                                 </div>
@@ -106,43 +108,22 @@
                     <div class="row justify-content-center" id="menu-content">
                         <h4 class="text-white">Completed Trainings</h4>
                     </div>
-                    <div class="row">
-                        <div class="col card mt-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col text-left pt-3">
-                                        <strong>Course        : </strong> Spring<br>
-                                        <strong>Trainee       : </strong> Akshay Anand<br>
-                                        <strong>Completed On  : </strong> 09 - 07 - 2019<br />
-                                        <strong>Rating        : </strong> 8.9 / 10<br />
+                    <div class="row justify-content-center">
+                        <div *ngFor="let data of mentorData">
+                            <div class="col">
+                                <div class="card mt-2">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col text-left pt-3">
+                                                <strong>Course : </strong> {{data.name}}<br>
+                                                <strong>Trainee : </strong> {{data.title}} {{data.trainee}}<br>
+                                                <strong>Completed On : </strong> {{data.doc}}<br />
+                                                <strong>Rating : </strong> {{data.rating}}<br />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col card mt-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col text-left pt-3">
-                                        <strong>Course        : </strong> Full Stack<br>
-                                        <strong>Trainee       : </strong> Nishat Khan<br>
-                                        <strong>Completed On  : </strong> 26 - 03 - 2019<br />
-                                        <strong>Rating        : </strong> 8.4 / 10<br />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col card mt-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col text-left pt-3">
-                                        <strong>Course        : </strong> Core Java<br>
-                                        <strong>Trainee       : </strong> Swarnava Saha<br>
-                                        <strong>Completed On  : </strong> 02 - 06 - 2018<br />
-                                        <strong>Rating        : </strong> 7.8 / 10<br />
-                                    </div>
-                                </div>
+                                <div class="col-sm-1"></div>
                             </div>
                         </div>
                     </div>
@@ -193,58 +174,23 @@
         </div>
 
         <div class="card-body">
-            <div class="col card mt-2">
+            <div class="col card mt-2" *ngFor="let data of payData">
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <img src=".././../assets/img/Spring.png" width="150px" height="150px" class="rounded float-left" alt="">
+                            <img src={{data.pic}} width="150px" height="150px" class="rounded float-left" alt="">
                         </div>
                         <div class="col pt-3">
-                            <strong>Trainee : </strong>Akshay Anand<br>
-                            <strong>Course : </strong>Spring <br>
-                            <strong>Completed : </strong>100% <br>
-                            <strong>Payments made : </strong>3 <br>
-                            <strong>Pending Payments : </strong>1 <br>
+                            <strong>Trainee : </strong>{{data.trainee}}<br>
+                            <strong>Course : </strong>{{data.course}} <br>
+                            <strong>Completed : </strong>{{data.completed}} <br>
+                            <strong>Payments made : </strong>{{data.payments}} <br>
+                            <strong>Pending Payments : </strong>{{data.pending}} <br>
                         </div>
-                        <div class="col text-center pt-5">
+                        <div *ngIf="data.payments>0" class="col text-center pt-5">
                             <button type="button" class="btn btn-success">Withdraw payment</button>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col card mt-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <img src=".././../assets/img/MySql.png" width="150px" height="150px" class="rounded float-left" alt="">
-                        </div>
-                        <div class="col pt-3">
-                            <strong>Trainee : </strong>Anwesha Gupta<br>
-                            <strong>Course : </strong>MySQL<br>
-                            <strong>Completed : </strong>63% <br>
-                            <strong>Payments made : </strong>2 <br>
-                            <strong>Pending Payments : </strong>2 <br>
-                        </div>
-                        <div class="col text-center pt-5">
-                            <button type="button" class="btn btn-success" disabled>Withdraw payment</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col card mt-2">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <img src=".././../assets/img/Spring.png" width="150px" height="150px" class="rounded float-left" alt="">
-                        </div>
-                        <div class="col pt-3">
-                            <strong>Trainee : </strong>Arnab Bhar<br>
-                            <strong>Course : </strong>Spring <br>
-                            <strong>Completed : </strong>0% <br>
-                            <strong>Payments made : </strong>0 <br>
-                            <strong>Pending Payments : </strong>4 <br>
-                        </div>
-                        <div class="col text-center pt-5">
+                        <div *ngIf="data.payments==0" class="col text-center pt-5">
                             <button type="button" class="btn btn-success" disabled>Withdraw payment</button>
                         </div>
                     </div>
@@ -260,40 +206,26 @@
         </div>
         <div class="container">
             <div class="card-body">
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src=".././../assets/img/Spring.png" width="150px" height="150px" class="rounded float-left" alt="">
-                            </div>
-                            <div class="col pt-3">
-                                <strong>Trainee : </strong>Akshay Anand<br>
-                                <strong>Course : </strong>Spring <br>
-                                <strong>Payment Status : </strong>Payment Recieved
-                            </div>
-                            <div class="col text-center pt-5">
-                                <button type="button" class="btn btn-primary">Payment Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col card mt-2">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <img src=".././../assets/img/MySql.png" width="150px" height="150px" class="rounded float-left" alt="">
-                            </div>
-                            <div class="col pt-3">
-                                <strong>Trainee : </strong>Anwesha Gupta<br>
-                                <strong>Course : </strong>MySQL<br>
-                                <strong>Payment Status : </strong>Payment Recieved
-                            </div>
-                            <div class="col text-center pt-5">
-                                <button type="button" class="btn btn-primary">Payment Details</button>
+                <span *ngFor="let data of payData">
+                    <div *ngIf="data.payments>0" class="col card mt-2">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <img src={{data.pic}} width="150px" height="150px" class="rounded float-left"
+                                        alt="">
+                                </div>
+                                <div class="col pt-3">
+                                    <strong>Trainee : </strong>{{data.trainee}}<br>
+                                    <strong>Course : </strong>{{data.course}} <br>
+                                    <strong>Payment Status : </strong>Payment Recieved
+                                </div>
+                                <div class="col text-center pt-5">
+                                    <button type="button" class="btn btn-primary">Payment Details</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </span>
             </div>
         </div>
     </div>
@@ -307,7 +239,8 @@
             </div>
             <div class="file-field">
                 <div class="mb-4">
-                    <img src=".././../assets/img/profile.jpg" width="150px" height="150px" class="rounded-circle z-depth-1-half avatar-pic" alt="">
+                    <img src=".././../assets/img/profile.jpg" width="150px" height="150px"
+                        class="rounded-circle z-depth-1-half avatar-pic" alt="">
                 </div>
                 <input type="file" class="btn btn-secondary" />
                 <button class="btn btn-primary" type="button">Upload</button>
@@ -344,7 +277,7 @@
 
             <div class="form-group">
                 <label for="exampleFormControlSelect3">Time Zone</label>
-                <select single class="form-control " id="exampleFormControlSelect3"> 
+                <select single class="form-control " id="exampleFormControlSelect3">
                     <!-- Time Zone span -->
                     <option timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">
                         (GMT-12:00) International Date Line West</option>

@@ -22,9 +22,12 @@ export class LoginComponent implements OnInit {
   selectedUser: string;
   constructor(public router: Router,
     private logIn: LoginService,
-    private http: HttpClient) { }
+    private http: HttpClient) {
+    this.logIn.loginName = "guest";
+  }
 
   ngOnInit() {
+
   }
   selectUser(event) {
     this.selectedUser = event.target.value;

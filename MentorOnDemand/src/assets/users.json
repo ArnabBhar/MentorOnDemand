@@ -2,6 +2,13 @@
     {
         "username" : "pritamb123@gmail.com",
         "password" : "pritamb123@gmail.com",
-        "name" : "Pritam Banerjee"
+        "name" : "Pritam Banerjee",
+        "status":"unblocked"
+    },
+    {
+        "username" : "anwesha.gupta@gmail.com",
+        "password" : "anwesha.gupta@gmail.com",
+        "name" : "Anwesha Gupta",
+        "status":"blocked"
     }
 ]

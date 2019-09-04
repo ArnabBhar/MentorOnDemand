@@ -37,13 +37,3 @@ function addskill(res) {
     document.getElementById(res).disabled = true;
     return false;
 }
-
-function action(button) {
-    if (document.getElementById(button).classList.contains('btn-success')) {
-        document.getElementById(button).className = "btn btn-danger";
-        document.getElementById(button).value = "Block";
-    } else if (document.getElementById(button).classList.contains('btn-danger')) {
-        document.getElementById(button).className = "btn btn-success";
-        document.getElementById(button).value = "Unblock";
-    }
-}

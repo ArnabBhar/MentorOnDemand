@@ -47,3 +47,18 @@ function action(button) {
         document.getElementById(button).value = "Unblock";
     }
 }
+
+function validFormTrainee() {
+    var fullName = document.forms["formTrainee"]["full_name"].value;
+    if (fullName == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
+function validFormTrainer() {
+    var fullName = document.forms["formTrainer"]["full_name"].value;
+    if (fullName == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }

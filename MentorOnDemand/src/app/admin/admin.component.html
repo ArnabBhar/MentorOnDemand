@@ -49,32 +49,18 @@
                             <p class="h5">Progress</p>
                         </div>
                     </div>
-                    <div class="row p-3 justify-content-center text-white">
+                    <div class="row p-3 justify-content-center text-white" *ngFor="let data of traineeData">
                         <div class="col-sm-2">
-                            <p>Pritam Banerjee</p>
+                            <p>{{data.titleTrainee}} {{data.trainee}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>Spring</p>
+                            <p>{{data.name}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>Mousumi Dutt</p>
+                            <p>{{data.titleTrainer}} {{data.trainer}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>78%</p>
-                        </div>
-                    </div>
-                    <div class="row p-3 justify-content-center text-white">
-                        <div class="col-sm-2">
-                            <p>Anwesha Gupta</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>MySQL</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>Samrat Sarkar</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>37%</p>
+                            <p>{{data.progress}}</p>
                         </div>
                     </div>
                 </div>
@@ -94,45 +80,15 @@
                             <p class="h4">Action</p>
                         </div>
                     </div>
-                    <div class="row p-3 text-white">
+                    <div class="row p-3 text-white" *ngFor="let course of courseData">
                         <div class="col-sm-3">
-                            <p>Spring</p>
+                            <p>{{course.name}}</p>
                         </div>
                         <div class="col-sm-3">
-                            <p>&#8377; 30,000</p>
+                            <p>&#8377; {{course.fee}}</p>
                         </div>
                         <div class="col-sm-3">
-                            <p>22</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <button type="button" class="btn btn-info">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                    <div class="row p-3 text-white">
-                        <div class="col-sm-3">
-                            <p>Angular</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <p>&#8377; 40,000</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <p>18</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <button type="button" class="btn btn-info">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                    <div class="row p-3 text-white">
-                        <div class="col-sm-3">
-                            <p>MySQL</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <p>&#8377; 20,000</p>
-                        </div>
-                        <div class="col-sm-3">
-                            <p>30</p>
+                            <p>{{course.capacity}}</p>
                         </div>
                         <div class="col-sm-3">
                             <button type="button" class="btn btn-info">Edit</button>
@@ -174,27 +130,18 @@
                             <p class="h5">Action</p>
                         </div>
                     </div>
-                    <div class="row p-3 text-white">
+                    <div class="row p-3 text-white" *ngFor="let data of userData;let i = index">
                         <div class="col-sm-4">
-                            <p>Pritam Banerjee</p>
+                            <p>{{data.name}}</p>
                         </div>
                         <div class="col-sm-4">
-                            <p>prb97@gmail.com</p>
+                            <p>{{data.username}}</p>
                         </div>
-                        <div class="col-sm-4">
-                            <input type="button" class="btn btn-danger" onclick="return action('user-1')" id="user-1"
-                                value="Block">
+                        <div *ngIf="data.status=='unblocked'" class="col-sm-4">
+                            <input type="button" class="btn btn-danger" (click)="block(i, 'user')" id="user-1" value="Block">
                         </div>
-                    </div>
-                    <div class="row p-3 text-white">
-                        <div class="col-sm-4">
-                            <p>Anwesha Gupta</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <p>anwesha.gupta@gmail.com</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="button" class="btn btn-success" onclick="return action('user-2')" id="user-2"
+                        <div *ngIf="data.status=='blocked'" class="col-sm-4">
+                            <input type="button" class="btn btn-success" (click)="unblock(i, 'user')" id="user-2"
                                 value="Unblock">
                         </div>
                     </div>
@@ -217,28 +164,19 @@
                             <p class="h5">Action</p>
                         </div>
                     </div>
-                    <div class="row p-3 text-white">
+                    <div class="row p-3 text-white" *ngFor="let data of mentorData;let j = index">
                         <div class="col-sm-4">
-                            <p>Samrat Sarkar</p>
+                            <p>{{data.name}}</p>
                         </div>
                         <div class="col-sm-4">
-                            <p>samratsarkar007@gmail.com</p>
+                            <p>{{data.username}}</p>
                         </div>
-                        <div class="col-sm-4">
-                            <input type="button" class="btn btn-success" onclick="return action('user-3')" id="user-3"
+                        <div class="col-sm-4" *ngIf="data.status=='blocked'">
+                            <input type="button" class="btn btn-success" (click)="unblock(j, 'trainer')" id="user-3"
                                 value="Unblock">
                         </div>
-                    </div>
-                    <div class="row p-3 text-white">
-                        <div class="col-sm-4">
-                            <p>Mousumi Dutt</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <p>dutt.mousumi@gmail.com</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <input type="button" class="btn btn-danger" onclick="return action('user-4')" id="user-4"
-                                value="Block">
+                        <div class="col-sm-4" *ngIf="data.status=='unblocked'">
+                            <input type="button" class="btn btn-danger" (click)="block(j, 'trainer')" id="user-4" value="Block">
                         </div>
                     </div>
                 </div>
@@ -269,38 +207,21 @@
                             <p class="h5">Payment Date</p>
                         </div>
                     </div>
-                    <div class="row p-3 text-white justify-content-center">
+                    <div class="row p-3 text-white justify-content-center" *ngFor="let pay of paymentData">
                         <div class="col-sm-2">
-                            <p>Pritam Banerjee</p>
+                            <p>{{pay.titleTrainee}} {{pay.trainee}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>Spring</p>
+                            <p>{{pay.name}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>Mousumi Dutt</p>
+                            <p>{{pay.titleTrainer}} {{pay.trainer}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>&#8377; 30,000</p>
+                            <p>&#8377; {{pay.fee}}</p>
                         </div>
                         <div class="col-sm-2">
-                            <p>18-06-2019</p>
-                        </div>
-                    </div>
-                    <div class="row p-3 text-white justify-content-center">
-                        <div class="col-sm-2">
-                            <p>Anwesha Gupta</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>MySQL</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>Samrat Sarkar</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>&#8377; 20,000</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>18-07-2019</p>
+                            <p>{{pay.paymentDate}}</p>
                         </div>
                     </div>
                 </div>

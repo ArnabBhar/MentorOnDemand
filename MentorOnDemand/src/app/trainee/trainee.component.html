@@ -236,35 +236,24 @@
 
                 <div *ngIf="userCompleteFlag">
                     <div class="row justify-content-center py-5">
-                        <div class="col card mt-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <img src=".././../assets/img/html.png" width="150px" height="150px"
-                                            class="rounded float-left" alt="">
-                                    </div>
-                                    <div class="col text-left pt-3">
-                                        <strong> Course : </strong> HTML<br>
-                                        <strong> Trainer : </strong> Amit Paul<br>
-                                        <strong> Date of completion : </strong> Jun 18, 2018
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-1"></div>
-                        <div class="col card mt-2">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <img src=".././../assets/img/Css.png" width="150px" height="150px"
-                                            class="rounded float-left" alt="">
-                                    </div>
-                                    <div class="col text-left pt-3">
-                                        <strong> Course : </strong> CSS<br>
-                                        <strong> Trainer : </strong> Amit Paul<br>
-                                        <strong> Date of completion : </strong> Aug 18, 2018
+                        <div *ngFor="let user of userData">
+                            <div class="col">
+                                <div class="card mt-2">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <img src={{user.pic}} width="150px" height="150px"
+                                                    class="rounded float-left" alt="">
+                                            </div>
+                                            <div class="col text-left pt-3">
+                                                <strong> Course : </strong> {{user.name}}<br>
+                                                <strong> Trainer : </strong>{{user.title}} {{user.trainer}}<br>
+                                                <strong> Date of completion : </strong> {{user.doc}}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-1"></div>
                             </div>
                         </div>
                     </div>
